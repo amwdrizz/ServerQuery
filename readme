@@ -48,8 +48,7 @@ For Standalone continuation please read section 2b)
 2a) Installtion -- Website Intergration
 When you extract this app it will be in the folder ServerQuery/Current For the most
 updated files please check our CVS which is located at 
-http://serverq.cvs.sourceforge.net/serverq/CURRENT/ <- please note that CURRENT is 
-in caps, as if you go to current you will get a version that is no longer maintained.
+https://github.com/amwdrizz/ServerQuery 
 Current Directory Structure.
 
 |-------------------------|
