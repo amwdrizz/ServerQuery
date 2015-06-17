@@ -1,0 +1,109 @@
+This file will help you setup and configure ServerQuery
+-----------------
+ServerQ -- This Software is designed to gather information from
+an active Half-Life Dedicated Server.  
+This version is beta and is not designed for Production enviroment.
+
+Copyright (C) 2008  Jonathan Nedobity
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-----------------
+Table of Contents 
+	I) INSTALL REQUIREMENTS
+	1) About, and Use
+	2) Installation
+	2a) Website Intergration
+	2b) Standalone Website
+	
+-----------------
+I) Install Requirements
+
+PHP version 5+
+Apache Web Server, Tested on Apache 2.2.
+
+
+
+-----------------
+1) About and Use
+ServerQuery is designed for use with Existing HLDS (Half-Life Dedicated Server)
+installation.  You must be a RCON admin of the server or know the RCON password.
+This web app is designed to connect to a HLDS installtion and gather server
+specs (IE: Current Server Name, Current Map, Max Players, Current Players).
+We are working on incorperating the ability to see current players, frags and
+time on the server.  
+
+You may use this software free of charge, and may modify it as you see fit.
+
+-----------------
+2) Installtion
+If you wish to use it STANDALONE (IE not part of a website) then you will need to
+rename loader.php to index.php.  For a intergation use please read section 2a).  
+For Standalone continuation please read section 2b)
+------------------
+2a) Installtion -- Website Intergration
+When you extract this app it will be in the folder ServerQuery/Current For the most
+updated files please check our CVS which is located at 
+http://serverq.cvs.sourceforge.net/serverq/CURRENT/ <- please note that CURRENT is 
+in caps, as if you go to current you will get a version that is no longer maintained.
+Current Directory Structure.
+
+|-------------------------|
+|-->ServerQuery/CURRENT   |
+|-------------------------|
+|---->/classes		  |
+|------>serverclass.php   |
+|------>css.php		  |
+|-------------------------|
+|---->/templates	  |
+|------->main.html	  |
+|------->mini.html	  |
+|-------------------------|
+|---->config.inc.php	  |
+|---->license		  |
+|---->list.php		  |
+|---->loader.php	  |
+|---->readme		  |
+|-------------------------|
+
+For website intergration please just put the contents of the folder CURRENT into the folder
+of which you plan on using this script. So if it is for your entire site then you would
+upload to /public_html.
+
+Prior to upload you should edit the config.inc.php to reflect the values for you server
+and if you wish to use multiple servers or not.
+
+Then in your index page or the page you wish to implament this script on place at the top
+of the page 
+
+Edit the loader.php file to refelct the following
+
+Find 
+$HL->maintpl(); //......
+Replace with
+
+// $HL->maintpl();
+<?php
+require_once("loader.php");
+?>
+
+That will load all the correct files and load the link for you to use.
+
+The link to place were you want the template to be placed is
+
+<?php
+$HL->maintpl();
+?>
+
+And load the page you put the code into and it should work.
+
+-----------------
+2b) Standalone Install
+
+Configure the config.inc.php file with directions above and upload to your website.
+
+Rename loader.php to be you index.php file and it should load up with your server info
